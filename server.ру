@@ -1,1 +1,13 @@
+import os
+from fastapi import FastAPI
 
+app = FastAPI(title="Garmin Recovery")
+
+@app.get("/")
+def home():
+    return {"status": "running", "service": "garmin-recovery"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+  
